@@ -17,10 +17,11 @@
 * Long lines of code should not be wrapped onto the next line.
 * Order of operations should be made explicitly clear; use parenthesis as necessary.
 * Put a space between operators and values.
-* Use symbolic operators instead of keyword operators
+* Use symbolic operators instead of keyword operators.
 * Ternary statements are allowed for assigning values to a variable or property, or specifying parameters for a method/function.  Ternary statements are NOT mini-if statements for deciding on what methods/functions to execute!
-* Add a space between keywords and brackets
-* Be efficient with checking values
+* Add a space between keywords and braces.
+* Be efficient with checking variables.
+* Only increment tabbing (by one) when you go up a level (a new level of braces) and do not add tabbing on lines which contain no content at all.
 
 **Examples:**
 
@@ -126,9 +127,33 @@ example 10 - *checking variables*
 	{
 		echo 'COOOOOOOOOOKIES!';
 	}
-	
+
 	// this is good
 	if ($something && !$somethingelse)
 	{
 		echo 'COOOOOOOOOOKIES!';
+	}
+
+example 11 - *no excessive tabbing*
+
+	// this is bad (let [\t] be a tab)
+	if ($something)
+	{
+	[\t][\t]echo 'b';
+	}
+	[\t]
+	if (!$somethingelse)
+	{
+	[\t]echo 'c';
+	}
+
+	// this is good
+	if ($something)
+	{
+	[\t]echo 'b';
+	}
+
+	if (!$somethingelse)
+	{
+	[\t]echo 'c';
 	}
