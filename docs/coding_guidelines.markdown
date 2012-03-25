@@ -19,3 +19,86 @@
 * Put a space between operators and values.
 * Use symbolic operators instead of keyword operators
 * Ternary statements are allowed for assigning values to a variable or property, or specifying parameters for a method/function.  Ternary statements are NOT mini-if statements for deciding on what methods/functions to execute!
+
+**Examples:**
+
+example 1 - *braces vs keywords*
+
+	// this is bad
+	if($something == true)
+		echo 'COOKIES!';
+	endif;
+
+	// this is good
+	if($something == true)
+	{
+		echo 'COOKIES!';
+	}
+
+example 2 - *brace location*
+
+	// this is bad
+	if($something == true) {
+		echo 'hello world';
+	}
+
+	// this is good
+	if($something == true)
+	{
+		echo 'hello world';
+	}
+
+example 3 - *statement stacking*
+
+	// this is bad
+	echo 'hi'; $this->doThisAndThat(); exit();
+
+	// this is good
+	echo 'hi';
+	$this->doSomething();
+	exit();
+
+example 4 - *statement wrapping*
+
+	// this is bad
+	$this->doSomething('areallylongstringthatisverylongandisveryannoyingihatethisstring',
+		array('something' => 'foobar'));
+
+	// this is good
+	$this->doSomething('areallylongstringthatisverylongandisveryannoyingihatethisstring', array('something' => 'foobar'));
+
+	// this is much better
+	$long_string = 'areallylongstringthatisverylongandisveryannoyingihatethisstring';
+	$this->doSomething($long_string, array('something' => 'foobar'));
+
+example 5 - *order of operations, operator precedence*
+
+	// this is bad
+	$bool = ($big_var < 7 && $super_var > 8 || $some_var == 4);
+
+	// this is good
+	$bool = ($big_var < 7 && ($super_var > 8 || $some_var == 4));
+
+example 6 - *spacing between operators and values*
+
+	// this is bad
+	$value=3+$another_value;
+
+	// this is good
+	$value = 3 + $another_value;
+
+example 7 - *symbolic operators versus keyword operators*
+
+	// this is bad
+	if($something AND $something_else)
+
+	// this is good
+	if($something && $something_else)
+
+example 8 - *ternary statements*
+
+	// this is bad
+	($some_value) ? $this->doSomething($value) : $this->doAnotherThing($value);
+
+	// this is good
+	$some_value = ($value !== false) ? $this->doSomething($value) : $some_other_value;
