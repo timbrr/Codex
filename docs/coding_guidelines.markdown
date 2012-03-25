@@ -137,23 +137,23 @@ example 10 - *checking variables*
 example 11 - *no excessive tabbing*
 
 	// this is bad (let [\t] be a tab)
-	if ($something)
-	{
-	[\t][\t]echo 'b';
-	}
+	[\t]if ($something)
+	[\t]{
+	[\t][\t][\t]echo 'b';
+	[\t]}
 	[\t]
-	if (!$somethingelse)
-	{
-	[\t]echo 'c';
-	}
+	[\t]if (!$somethingelse)
+	[\t]{
+	[\t][\t]echo 'c';
+	[\t]}
 
 	// this is good
-	if ($something)
-	{
-	[\t]echo 'b';
-	}
+	[\t]if ($something)
+	[\t]{
+	[\t][\t]echo 'b';
+	[\t]}
 
-	if (!$somethingelse)
-	{
-	[\t]echo 'c';
-	}
+	[\t]if (!$somethingelse)
+	[\t]{
+	[\t][\t]echo 'c';
+	[\t]}
