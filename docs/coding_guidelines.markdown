@@ -19,18 +19,20 @@
 * Put a space between operators and values.
 * Use symbolic operators instead of keyword operators
 * Ternary statements are allowed for assigning values to a variable or property, or specifying parameters for a method/function.  Ternary statements are NOT mini-if statements for deciding on what methods/functions to execute!
+* Add a space between keywords and brackets
+* Be efficient with checking values
 
 **Examples:**
 
 example 1 - *braces vs keywords*
 
 	// this is bad
-	if($something == true)
+	if ($something)
 		echo 'COOKIES!';
 	endif;
 
 	// this is good
-	if($something == true)
+	if ($something)
 	{
 		echo 'COOKIES!';
 	}
@@ -38,12 +40,12 @@ example 1 - *braces vs keywords*
 example 2 - *brace location*
 
 	// this is bad
-	if($something == true) {
+	if ($something) {
 		echo 'hello world';
 	}
 
 	// this is good
-	if($something == true)
+	if ($something)
 	{
 		echo 'hello world';
 	}
@@ -90,10 +92,10 @@ example 6 - *spacing between operators and values*
 example 7 - *symbolic operators versus keyword operators*
 
 	// this is bad
-	if($something AND $something_else)
+	if ($something AND $something_else)
 
 	// this is good
-	if($something && $something_else)
+	if ($something && $something_else)
 
 example 8 - *ternary statements*
 
@@ -101,4 +103,32 @@ example 8 - *ternary statements*
 	($some_value) ? $this->doSomething($value) : $this->doAnotherThing($value);
 
 	// this is good
-	$some_value = ($value !== false) ? $this->doSomething($value) : $some_other_value;
+	$some_value = (!$value) ? $this->doSomething($value) : $some_other_value;
+
+example 9 - *keywords*
+
+	// this is bad
+	if($something)
+	{
+		echo 'COOOOOOOOOOKIES!';
+	}
+
+	// this is good
+	if ($something)
+	{
+		echo 'COOOOOOOOOOKIES!';
+	}
+
+example 10 - *checking variables*
+
+	// this is bad
+	if ($something == true && $somethingelse != false)
+	{
+		echo 'COOOOOOOOOOKIES!';
+	}
+	
+	// this is good
+	if ($something && !$somethingelse)
+	{
+		echo 'COOOOOOOOOOKIES!';
+	}
