@@ -136,24 +136,24 @@ example 10 - *checking variables*
 
 example 11 - *no excessive tabbing*
 
-	// this is bad (let [\t] be a tab)
-	[\t]if ($something)
-	[\t]{
-	[\t][\t][\t]echo 'b';
-	[\t]}
-	[\t]
-	[\t]if (!$somethingelse)
-	[\t]{
-	[\t][\t]echo 'c';
-	[\t]}
+	// this is bad (let [tab] be a tab)
+	[tab]if ($something)
+	[tab]{
+	[tab][tab][tab]echo 'b';
+	[tab]}
+	[tab]
+	[tab]if (!$somethingelse)
+	[tab]{
+	[tab][tab]echo 'c';
+	[tab]}
 
 	// this is good
-	[\t]if ($something)
-	[\t]{
-	[\t][\t]echo 'b';
-	[\t]}
+	[tab]if ($something)
+	[tab]{
+	[tab][tab]echo 'b';
+	[tab]}
 
-	[\t]if (!$somethingelse)
-	[\t]{
-	[\t][\t]echo 'c';
-	[\t]}
+	[tab]if (!$somethingelse)
+	[tab]{
+	[tab][tab]echo 'c';
+	[tab]}
