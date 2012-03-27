@@ -22,6 +22,7 @@
 * Add a space between keywords and braces.
 * Be efficient with checking variables.
 * Only increment tabbing (by one) when you go up a level (a new level of braces) and do not add tabbing on lines which contain no content at all.
+* Use shorthand form and have a space when typecasting.
 
 **Examples:**
 
@@ -157,3 +158,11 @@ example 11 - *no excessive tabbing*
 	[tab]{
 	[tab][tab]echo 'c';
 	[tab]}
+
+example 12 - *typecasting*
+
+	// this is bad
+	$something = (integer)$somethingelse;
+	
+	// this is good
+	$something = (int) $somethingelse;
