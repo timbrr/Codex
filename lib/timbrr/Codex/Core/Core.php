@@ -19,12 +19,7 @@ class Core
 
     public static function getConfig($config_name)
     {
-        if(!isset(self::$config[$config_name]))
-        {
-            return NULL;
-        }
-
-        return self::$config[$config_name];
+        return (!isset(self::$config[$config_name])) ? NULL : self::$config[$config_name];
     }
 
     public static function setObject($slot, $object)
@@ -36,11 +31,6 @@ class Core
 
     public static function getObject($slot)
     {
-        if(!isset(self::$objects[(string) $slot]))
-        {
-            return NULL;
-        }
-
-        return self::$objects[(string) $slot];
+        return (!isset(self::$objects[(string) $slot])) ? NULL : self::$objects[(string) $slot];
     }
 }
